@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Sumit Singh Kanwal — Backend Lead & AI/Platform Engineer",
   description:
-    "Backend Lead at Cisco with 10 years of experience building distributed systems, AI-native platforms, and developer tooling. Cofounder, builder, and Cisco Live 2026 speaker.",
+    "Backend Lead at Cisco with 11+ years of experience building distributed systems, AI-native platforms, and developer tooling. Cofounder, builder, and Cisco Live 2026 speaker.",
 };
 
 export default function RootLayout({

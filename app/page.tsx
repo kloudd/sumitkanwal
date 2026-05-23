@@ -36,7 +36,7 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const asset = (path: string) => `${BASE_PATH}${path}`;
 
 const stats = [
-  { value: "10+", label: "Years engineering" },
+  { value: "11+", label: "Years engineering" },
   { value: "6", label: "Companies & ventures" },
   { value: "2", label: "Startups co-founded" },
   { value: "2026", label: "Cisco Live · Amsterdam" },
@@ -295,7 +295,7 @@ export default function Home() {
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
                 Backend Lead at{" "}
                 <span className="font-semibold text-slate-900">Cisco</span>.
-                Ten years building systems with{" "}
+                Eleven years building systems with{" "}
                 <span className="font-semibold text-slate-900">teeth</span> —
                 large-scale telco & hyperscaler analytics, AI-native developer
                 tooling, and platforms that go from POC to production. Two
@@ -381,7 +381,7 @@ export default function Home() {
                 />
                 <div className="relative h-56 w-56 overflow-hidden rounded-full bg-white p-1 shadow-2xl md:h-72 md:w-72">
                   <Image
-                    src={asset("/sumit.jpeg")}
+                    src={asset("/SumitKanwal.jpeg")}
                     alt="Sumit Singh Kanwal"
                     width={400}
                     height={400}
@@ -421,7 +421,7 @@ export default function Home() {
           <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
             <SectionLabel>Experience</SectionLabel>
             <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              A decade across telco, ed-tech, healthcare & AI.
+              Eleven years across telco, ed-tech, healthcare & AI.
             </h2>
           </div>
 
