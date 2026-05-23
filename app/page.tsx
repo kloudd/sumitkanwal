@@ -25,6 +25,9 @@ import {
   CheckCircle2,
   ArrowRight,
   Quote,
+  FileText,
+  Trophy,
+  BookOpen,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,7 +39,7 @@ const stats = [
   { value: "10+", label: "Years engineering" },
   { value: "6", label: "Companies & ventures" },
   { value: "2", label: "Startups co-founded" },
-  { value: "1", label: "Cisco Live talk · 2026" },
+  { value: "2026", label: "Cisco Live · Amsterdam" },
 ];
 
 const experience = [
@@ -45,7 +48,7 @@ const experience = [
     role: "Software Engineer III → IV → V",
     period: "Aug 2020 – Present",
     location: "Bengaluru",
-    accent: "from-indigo-500 to-violet-500",
+    accent: "bg-indigo-500",
     highlights: [
       "Led teams building network monitoring & data analytics for Airtel, Jio 5G, and RioTinto — driving future business expansions.",
       "Developed an AI-powered pull request reviewer for internal GitHub, now used by 4 teams across ~45 repositories.",
@@ -61,14 +64,14 @@ const experience = [
     role: "Senior Software Engineer",
     period: "Dec 2018 – Aug 2020",
     location: "Bengaluru",
-    accent: "from-emerald-500 to-teal-500",
+    accent: "bg-emerald-500",
     badge: "Series A → Acquisition",
     highlights: [
       "Led product development team of 4 engineers.",
       "Migrated Python2 EOL microservices to Python3, ensuring business continuity.",
       "Owned release management; promoted effective collaboration across DevOps & SRE.",
       "Implemented security enhancements; managed AWS budgeting and resource optimization.",
-      "Contributed to the engineering org through the company's journey from Series A funding to acquisition.",
+      "Contributed through the company's journey from Series A funding to acquisition.",
     ],
     tags: ["Python", "AWS", "DevOps", "Microservices"],
   },
@@ -77,10 +80,10 @@ const experience = [
     role: "Early-stage Team Member",
     period: "Nov 2018 – Dec 2018",
     location: "Bengaluru",
-    accent: "from-amber-500 to-orange-500",
+    accent: "bg-amber-500",
     badge: "Karnataka Startup 300",
     highlights: [
-      "Part of Ekutur, an early-stage startup selected into the Karnataka Startup 300 cohort — a state-level program recognizing high-potential ventures.",
+      "Selected into the Karnataka Startup 300 cohort — a state-level program recognizing high-potential ventures.",
       "Contributed to product and engineering decisions in a fast-moving startup environment, shaping early go-to-market and technical direction.",
     ],
     tags: ["Startup", "Product", "Karnataka 300"],
@@ -90,7 +93,7 @@ const experience = [
     role: "Senior Software Engineer",
     period: "Nov 2017 – Nov 2018",
     location: "Bengaluru",
-    accent: "from-sky-500 to-blue-500",
+    accent: "bg-sky-500",
     highlights: [
       "Led a development team of 2 engineers building ERP solutions for schools and an online analytics platform for decision-making based on student results.",
     ],
@@ -101,12 +104,12 @@ const experience = [
     role: "Cofounder & Director",
     period: "Sept 2016 – Nov 2017",
     location: "Bengaluru",
-    accent: "from-rose-500 to-pink-500",
+    accent: "bg-rose-500",
     badge: "Karnataka Startup 300",
     highlights: [
       "Co-founded Reckare to digitize healthcare via shareable medical records linked to Aadhaar fingerprint.",
       "Connected 2 clinics and 5+ individual doctors onto the Reckare ERP solution.",
-      "Selected into the Karnataka Startup 300 cohort — state-level recognition of early-stage startups with strong product potential.",
+      "Selected into the Karnataka Startup 300 cohort — state-level recognition of early-stage startups.",
     ],
     tags: ["Healthcare", "ERP", "Founder", "Karnataka 300"],
   },
@@ -115,7 +118,7 @@ const experience = [
     role: "Network Consulting Engineer",
     period: "June 2015 – Sept 2016",
     location: "Bengaluru",
-    accent: "from-slate-500 to-slate-700",
+    accent: "bg-slate-500",
     highlights: [
       "Provided software recommendations as part of the network optimization team to enhance client network performance.",
     ],
@@ -128,29 +131,28 @@ const projects = [
     title: "Webvortex",
     url: "https://webvortex.site/",
     description:
-      "AI-powered platform that redefines how software is created — an agentic, developer-grade approach to turn natural language prompts into fully functional web applications in minutes.",
+      "Agentic, developer-grade platform that turns natural-language prompts into fully functional web applications in minutes.",
     icon: Sparkles,
-    gradient: "from-violet-600 via-fuchsia-600 to-pink-500",
-    tags: ["Agentic AI", "Codegen", "Full-stack"],
-    video: "https://www.youtube.com/embed/tML0qWLuII8",
+    gradient: "from-violet-500 to-fuchsia-500",
+    tags: ["Agentic AI", "Codegen"],
   },
   {
     title: "Spectre Analysis",
     url: "https://spectreanalysis.site/",
     description:
-      "AI code governance platform that tracks every line of code — human or AI written — across the SDLC. Real ROI on AI tool spend, automated security policy enforcement, and audit-ready compliance reports in one dashboard.",
+      "AI code governance — tracks every line of code (human or AI) across the SDLC. ROI on AI spend, automated policy enforcement, audit-ready reports.",
     icon: ShieldCheck,
-    gradient: "from-indigo-600 via-blue-600 to-cyan-500",
-    tags: ["AI Governance", "Compliance", "DevSecOps", "ROI"],
+    gradient: "from-indigo-500 to-cyan-500",
+    tags: ["AI Governance", "DevSecOps"],
   },
   {
     title: "10kGraph",
     url: "https://10kgraph.com/",
     description:
-      "Interactive graph and data-visualization platform — build, explore, and reason over richly-linked datasets at scale.",
+      "Interactive graph & data-visualization platform — build, explore, and reason over richly-linked datasets at scale.",
     icon: Network,
-    gradient: "from-emerald-600 via-teal-600 to-cyan-500",
-    tags: ["Graphs", "Data Viz", "Analytics"],
+    gradient: "from-emerald-500 to-teal-500",
+    tags: ["Graphs", "Data Viz"],
   },
   {
     title: "OrbitalVault",
@@ -158,35 +160,35 @@ const projects = [
     description:
       "Secure cloud vault — manage sensitive credentials, secrets, and high-trust data with modern access controls and audit trails.",
     icon: Lock,
-    gradient: "from-slate-700 via-slate-900 to-zinc-700",
-    tags: ["Security", "Secrets", "Cloud"],
+    gradient: "from-slate-400 to-zinc-500",
+    tags: ["Security", "Secrets"],
   },
   {
     title: "AI Call Pro",
     url: "https://preview--ai-agent-connect-now.lovable.app/",
     description:
-      "AI-powered calling agent handling real-world scenarios — tech-screening calls, loan follow-ups, property inquiries, and credit-card offers. Automated conversations, scheduling, and information gathering.",
+      "AI calling agent handling tech-screens, loan follow-ups, property inquiries, and credit-card offers — automated conversations and scheduling.",
     icon: PhoneCall,
-    gradient: "from-orange-500 via-amber-500 to-yellow-500",
-    tags: ["Voice AI", "Agents", "Automation"],
+    gradient: "from-orange-500 to-amber-500",
+    tags: ["Voice AI", "Agents"],
   },
   {
     title: "Podcast AI",
     url: "https://podcast-ai-five.vercel.app/",
     description:
-      "Real-time, AI-generated podcast platform — pick the podcaster, the guest, and a topic; the system dynamically generates engaging episodes simulating authentic conversations on demand.",
+      "Real-time, AI-generated podcast — pick the podcaster, the guest, the topic; episodes are dynamically generated on demand.",
     icon: Mic,
-    gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
-    tags: ["Generative Audio", "LLM", "Real-time"],
+    gradient: "from-rose-500 to-pink-500",
+    tags: ["Generative Audio", "LLM"],
   },
   {
     title: "Motorg",
     url: null,
     description:
-      "LLM guardrail platform to define, enforce, and evaluate policies for generative AI — content moderation, safety checks, and compliance rules with confidence scoring per evaluation.",
+      "LLM guardrail platform — define, enforce, and evaluate generative-AI policies with confidence scoring per evaluation.",
     icon: Gauge,
-    gradient: "from-blue-600 via-indigo-600 to-violet-600",
-    tags: ["Guardrails", "Safety", "Policy Engine"],
+    gradient: "from-blue-500 to-indigo-500",
+    tags: ["Guardrails", "Policy"],
   },
 ];
 
@@ -240,28 +242,40 @@ const skillGroups = [
   },
 ];
 
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mb-3 flex items-center gap-3">
+      <span className="h-px w-10 bg-gradient-to-r from-transparent to-indigo-500" />
+      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">
+        {children}
+      </span>
+      <span className="h-px w-10 bg-gradient-to-r from-indigo-500 to-transparent" />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-indigo-200 selection:text-indigo-900">
-      {/* ════════════════════════ HERO ════════════════════════ */}
-      <section className="relative overflow-hidden bg-white">
+      {/* ════════════════════════ HERO + ABOUT + STATS (one unified zone) ════════════════════════ */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-white to-slate-50">
         {/* Subtle grid pattern */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-grid-slate bg-[size:48px_48px] opacity-60 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_70%)]"
+          className="pointer-events-none absolute inset-0 bg-grid-slate bg-[size:40px_40px] opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
         />
         {/* Soft color orbs */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-gradient-to-br from-indigo-400/30 via-violet-400/30 to-fuchsia-400/20 blur-3xl"
+          className="pointer-events-none absolute -top-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-gradient-to-br from-indigo-400/30 via-violet-400/25 to-fuchsia-400/15 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-gradient-to-tr from-cyan-300/20 via-sky-300/20 to-blue-300/10 blur-3xl"
+          className="pointer-events-none absolute top-1/2 -left-32 h-80 w-80 rounded-full bg-gradient-to-tr from-cyan-300/15 to-sky-300/10 blur-3xl"
         />
 
-        <div className="container relative mx-auto px-4 py-16 md:py-24 lg:py-32">
-          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1fr_320px] lg:gap-16">
+        <div className="container relative mx-auto px-4 pt-14 pb-10 md:pt-20 md:pb-14">
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_300px] lg:gap-16">
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur">
                 <span className="relative flex h-2 w-2">
@@ -272,23 +286,23 @@ export default function Home() {
               </div>
 
               <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-slate-900 md:text-6xl lg:text-7xl">
-                Sumit Singh
-                <br />
+                Sumit Singh{" "}
                 <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
                   Kanwal.
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
                 Backend Lead at{" "}
-                <span className="font-semibold text-slate-900">Cisco</span>.{" "}
-                <span className="font-semibold text-slate-900">10 years</span>{" "}
-                shipping distributed systems and AI-native platforms for telco,
-                hyperscaler, and enterprise customers. Founder-mindset.
-                Speaker. Builder.
+                <span className="font-semibold text-slate-900">Cisco</span>.
+                Ten years building systems with{" "}
+                <span className="font-semibold text-slate-900">teeth</span> —
+                large-scale telco & hyperscaler analytics, AI-native developer
+                tooling, and platforms that go from POC to production. Two
+                startups, three live AI side-projects, one Cisco Live talk.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href="#contact"
                   className="group inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-700 hover:shadow-xl"
@@ -310,7 +324,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-600">
+              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-600">
                 <a
                   href="mailto:sumit.kanwal@gmail.com"
                   className="inline-flex items-center gap-2 transition hover:text-indigo-600"
@@ -318,6 +332,7 @@ export default function Home() {
                   <Mail className="h-4 w-4" />
                   sumit.kanwal@gmail.com
                 </a>
+                <span className="h-3 w-px bg-slate-300" />
                 <a
                   href="tel:+919663389360"
                   className="inline-flex items-center gap-2 transition hover:text-indigo-600"
@@ -325,6 +340,7 @@ export default function Home() {
                   <Phone className="h-4 w-4" />
                   +91-9663389360
                 </a>
+                <span className="h-3 w-px bg-slate-300" />
                 <a
                   href="https://linkedin.com/in/sumitkanwal"
                   target="_blank"
@@ -334,6 +350,7 @@ export default function Home() {
                   <Linkedin className="h-4 w-4" />
                   linkedin
                 </a>
+                <span className="h-3 w-px bg-slate-300" />
                 <a
                   href="https://github.com/kloudd"
                   target="_blank"
@@ -343,9 +360,10 @@ export default function Home() {
                   <Github className="h-4 w-4" />
                   github
                 </a>
+                <span className="h-3 w-px bg-slate-300" />
                 <span className="inline-flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  Bengaluru, India
+                  Bengaluru
                 </span>
               </div>
             </div>
@@ -361,7 +379,7 @@ export default function Home() {
                   aria-hidden
                   className="absolute -inset-1 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-500"
                 />
-                <div className="relative h-64 w-64 overflow-hidden rounded-full bg-white p-1 shadow-2xl md:h-80 md:w-80">
+                <div className="relative h-56 w-56 overflow-hidden rounded-full bg-white p-1 shadow-2xl md:h-72 md:w-72">
                   <Image
                     src={asset("/sumit.jpeg")}
                     alt="Sumit Singh Kanwal"
@@ -371,173 +389,110 @@ export default function Home() {
                     className="h-full w-full rounded-full object-cover object-[center_25%]"
                   />
                 </div>
-                <div className="absolute -bottom-2 right-4 flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-md md:right-8">
+                <div className="absolute -bottom-2 right-2 flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-md">
                   <Rocket className="h-3.5 w-3.5 text-indigo-600" />
-                  Cisco Live · Amsterdam 2026
+                  Cisco Live · 2026
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ════════════════════════ STATS STRIP ════════════════════════ */}
-      <section className="border-y border-slate-200 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 divide-x divide-slate-200 md:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="px-4 py-8 text-center md:py-10">
-                <div className="font-display text-3xl font-bold text-slate-900 md:text-4xl">
-                  {s.value}
+          {/* Stats ribbon — same hero canvas, no theme break */}
+          <div className="mt-12 rounded-2xl border border-slate-200 bg-white/70 shadow-sm backdrop-blur md:mt-16">
+            <div className="grid grid-cols-2 divide-x divide-slate-200 md:grid-cols-4">
+              {stats.map((s) => (
+                <div key={s.label} className="px-4 py-5 text-center md:py-6">
+                  <div className="font-display text-2xl font-bold text-slate-900 md:text-3xl">
+                    {s.value}
+                  </div>
+                  <div className="mt-1 text-[11px] uppercase tracking-[0.15em] text-slate-500 md:text-xs">
+                    {s.label}
+                  </div>
                 </div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-slate-500 md:text-sm">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════ ABOUT ════════════════════════ */}
-      <section id="about" className="relative py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-8 flex items-center gap-3">
-              <span className="h-px w-12 bg-indigo-600" />
-              <span className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-                About
-              </span>
-            </div>
-            <div className="relative rounded-3xl border border-slate-200 bg-white p-8 shadow-sm md:p-12">
-              <Quote
-                aria-hidden
-                className="absolute -top-4 left-8 h-10 w-10 rounded-full bg-indigo-600 p-2 text-white shadow-lg"
-              />
-              <p className="text-xl leading-relaxed text-slate-700 md:text-2xl">
-                I am a backend engineer who likes building systems with{" "}
-                <span className="font-semibold text-slate-900">teeth</span> —
-                large-scale telco/hyperscaler analytics, AI-native developer
-                tooling, and the kind of platforms that go from POC to
-                production. I have led teams at{" "}
-                <span className="font-semibold text-slate-900">Cisco</span>,
-                co-founded two startups, and continue to ship side-projects
-                across agentic AI, voice agents, code governance, and graph
-                tooling.
-              </p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════ EXPERIENCE ════════════════════════ */}
-      <section
-        id="experience"
-        className="relative bg-gradient-to-b from-slate-50 to-white py-20 md:py-28"
-      >
+      <section id="experience" className="relative bg-slate-50 py-14 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <div className="mb-3 flex items-center justify-center gap-3">
-              <span className="h-px w-12 bg-indigo-600" />
-              <span className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-                Experience
-              </span>
-              <span className="h-px w-12 bg-indigo-600" />
-            </div>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-              A decade across telco, ed-tech,
-              <br />
-              healthcare, and AI.
+          <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+            <SectionLabel>Experience</SectionLabel>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+              A decade across telco, ed-tech, healthcare & AI.
             </h2>
           </div>
 
-          <div className="mx-auto max-w-5xl">
-            <div className="relative">
-              {/* timeline line */}
+          <div className="mx-auto max-w-3xl">
+            <div className="relative pl-8 md:pl-12">
+              {/* Vertical rail */}
               <div
                 aria-hidden
-                className="absolute left-4 top-2 bottom-2 hidden w-px bg-gradient-to-b from-indigo-300 via-slate-200 to-transparent md:block md:left-1/2 md:-translate-x-px"
+                className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-indigo-300 via-slate-300 to-transparent md:left-5"
               />
-              <div className="space-y-8 md:space-y-12">
-                {experience.map((job, idx) => (
+
+              <div className="space-y-6 md:space-y-8">
+                {experience.map((job) => (
                   <div
                     key={`${job.company}-${job.period}`}
-                    className="relative md:grid md:grid-cols-2 md:gap-10"
+                    className="relative"
                   >
-                    {/* timeline dot */}
+                    {/* Rail dot */}
                     <div
                       aria-hidden
-                      className="absolute left-4 top-6 z-10 hidden h-3 w-3 -translate-x-1/2 rounded-full bg-white ring-4 ring-indigo-500 md:left-1/2 md:block"
+                      className={`absolute -left-[1.65rem] top-6 h-3 w-3 rounded-full ring-4 ring-slate-50 md:-left-[1.9rem] ${job.accent}`}
                     />
-                    <div
-                      className={`${
-                        idx % 2 === 0 ? "md:pr-10 md:text-right" : "md:col-start-2 md:pl-10"
-                      } group`}
-                    >
-                      <article className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-lg md:p-7">
-                        <div
-                          className={`absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-gradient-to-r ${job.accent}`}
-                        />
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <h3 className="font-display text-lg font-bold text-slate-900 md:text-xl">
-                              {job.company}
-                            </h3>
-                            <p className="mt-0.5 text-sm font-medium text-slate-600">
-                              {job.role}
-                            </p>
+
+                    <article className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md md:p-6">
+                      <header className="flex flex-wrap items-start justify-between gap-3">
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-display text-lg font-bold text-slate-900 md:text-xl">
+                            {job.company}
+                          </h3>
+                          <p className="mt-0.5 text-sm font-medium text-slate-600">
+                            {job.role}
+                          </p>
+                          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500">
+                            <span className="inline-flex items-center gap-1">
+                              <Calendar className="h-3.5 w-3.5" />
+                              {job.period}
+                            </span>
+                            <span className="inline-flex items-center gap-1">
+                              <MapPin className="h-3.5 w-3.5" />
+                              {job.location}
+                            </span>
                           </div>
-                          <Building2 className="h-5 w-5 shrink-0 text-slate-400" />
                         </div>
-                        <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                          <span className="inline-flex items-center gap-1">
-                            <Calendar className="h-3.5 w-3.5" />
-                            {job.period}
+                        {job.badge && (
+                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-semibold text-amber-800 ring-1 ring-amber-200">
+                            <Award className="h-3 w-3" />
+                            {job.badge}
                           </span>
-                          <span className="inline-flex items-center gap-1">
-                            <MapPin className="h-3.5 w-3.5" />
-                            {job.location}
+                        )}
+                      </header>
+
+                      <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
+                        {job.highlights.map((h, i) => (
+                          <li key={i} className="flex gap-2.5">
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-500" />
+                            <span>{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="mt-4 flex flex-wrap gap-1.5">
+                        {job.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
+                          >
+                            {t}
                           </span>
-                          {job.badge && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-800">
-                              <Award className="h-3 w-3" />
-                              {job.badge}
-                            </span>
-                          )}
-                        </div>
-                        <ul
-                          className={`mt-4 space-y-2 text-sm leading-relaxed text-slate-700 ${
-                            idx % 2 === 0 ? "md:text-right" : ""
-                          }`}
-                        >
-                          {job.highlights.map((h, i) => (
-                            <li
-                              key={i}
-                              className={`flex gap-2 ${
-                                idx % 2 === 0 ? "md:flex-row-reverse" : ""
-                              }`}
-                            >
-                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-500" />
-                              <span className="text-left">{h}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <div
-                          className={`mt-4 flex flex-wrap gap-1.5 ${
-                            idx % 2 === 0 ? "md:justify-end" : ""
-                          }`}
-                        >
-                          {job.tags.map((t) => (
-                            <span
-                              key={t}
-                              className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
-                            >
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                      </article>
-                    </div>
+                        ))}
+                      </div>
+                    </article>
                   </div>
                 ))}
               </div>
@@ -549,36 +504,41 @@ export default function Home() {
       {/* ════════════════════════ PROJECTS ════════════════════════ */}
       <section
         id="projects"
-        className="relative overflow-hidden bg-slate-950 py-20 text-white md:py-28"
+        className="relative overflow-hidden bg-slate-950 py-14 text-white md:py-20"
       >
+        {/* Soft fade-in from light bg above */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-grid-slate opacity-[0.04] [background-size:48px_48px]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-50/10 to-transparent"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-indigo-600/20 via-violet-600/20 to-fuchsia-600/10 blur-3xl"
+          className="pointer-events-none absolute inset-0 bg-grid-slate opacity-[0.05] [background-size:40px_40px]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-indigo-600/15 via-violet-600/15 to-fuchsia-600/10 blur-3xl"
         />
 
         <div className="container relative mx-auto px-4">
-          <div className="mb-12 text-center">
+          <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
             <div className="mb-3 flex items-center justify-center gap-3">
-              <span className="h-px w-12 bg-violet-400" />
-              <span className="text-sm font-semibold uppercase tracking-wider text-violet-300">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-violet-400" />
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">
                 Projects
               </span>
-              <span className="h-px w-12 bg-violet-400" />
+              <span className="h-px w-10 bg-gradient-to-r from-violet-400 to-transparent" />
             </div>
-            <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
+            <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
               Shipped, not slideware.
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-300 md:text-lg">
-              Independent products and tools — live URLs you can open in a new
-              tab and click around.
+            <p className="mx-auto mt-3 max-w-xl text-base text-slate-300">
+              Independent products built end-to-end — live URLs you can open in
+              a new tab and click around.
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((p) => {
               const Icon = p.icon;
               return (
@@ -587,42 +547,41 @@ export default function Home() {
                   href={p.url ?? "#"}
                   target={p.url ? "_blank" : undefined}
                   rel={p.url ? "noopener noreferrer" : undefined}
-                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] ${
+                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] ${
                     p.url ? "" : "cursor-default"
                   }`}
                 >
                   <div
                     aria-hidden
-                    className={`pointer-events-none absolute -top-20 -right-20 h-48 w-48 rounded-full bg-gradient-to-br ${p.gradient} opacity-30 blur-3xl transition group-hover:opacity-50`}
+                    className={`pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br ${p.gradient} opacity-25 blur-3xl transition group-hover:opacity-40`}
                   />
                   <div className="relative">
-                    <div
-                      className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${p.gradient} shadow-lg`}
-                    >
-                      <Icon className="h-6 w-6 text-white" />
+                    <div className="mb-4 flex items-start justify-between">
+                      <div
+                        className={`inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${p.gradient} shadow-lg`}
+                      >
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
+                      {p.url && (
+                        <ExternalLink className="h-4 w-4 text-slate-500 transition group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      )}
                     </div>
-                    <h3 className="font-display text-xl font-bold">
+                    <h3 className="font-display text-lg font-bold">
                       {p.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-300">
                       {p.description}
                     </p>
-                    <div className="mt-4 flex flex-wrap gap-1.5">
+                    <div className="mt-3 flex flex-wrap gap-1.5">
                       {p.tags.map((t) => (
                         <span
                           key={t}
-                          className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-slate-200"
+                          className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-slate-300"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
-                    {p.url && (
-                      <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-violet-300 transition group-hover:text-white">
-                        Visit live
-                        <ExternalLink className="h-3.5 w-3.5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </div>
-                    )}
                   </div>
                 </a>
               );
@@ -630,10 +589,10 @@ export default function Home() {
           </div>
 
           {/* Featured demo */}
-          <div className="mx-auto mt-12 max-w-5xl">
+          <div className="mx-auto mt-10 max-w-5xl">
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 backdrop-blur">
               <div className="overflow-hidden rounded-xl bg-black">
-                <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/10">
+                <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
@@ -656,140 +615,128 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════ SKILLS ════════════════════════ */}
-      <section id="skills" className="py-20 md:py-28">
+      {/* ════════════════════════ SNAPSHOT — Skills + Recognition + Education ════════════════════════ */}
+      <section id="snapshot" className="bg-slate-50 py-14 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <div className="mb-3 flex items-center justify-center gap-3">
-              <span className="h-px w-12 bg-indigo-600" />
-              <span className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-                Skills
-              </span>
-              <span className="h-px w-12 bg-indigo-600" />
-            </div>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-              The stack I reach for.
+          <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+            <SectionLabel>Snapshot</SectionLabel>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+              Stack, signals & schooling.
             </h2>
           </div>
 
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {skillGroups.map((g) => {
-              const Icon = g.icon;
-              return (
-                <div
-                  key={g.title}
-                  className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-lg"
-                >
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 text-white shadow-md">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-slate-900">
-                      {g.title}
-                    </h3>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {g.items.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-700 transition group-hover:border-indigo-200 group-hover:bg-indigo-50 group-hover:text-indigo-800"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════ RECOGNITION ════════════════════════ */}
-      <section className="bg-gradient-to-br from-slate-50 via-white to-indigo-50 py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <div className="mb-3 flex items-center justify-center gap-3">
-              <span className="h-px w-12 bg-indigo-600" />
-              <span className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-                Recognition
-              </span>
-              <span className="h-px w-12 bg-indigo-600" />
-            </div>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-              Speaking, papers, and certs.
-            </h2>
-          </div>
-
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-3">
-            <div className="rounded-2xl border border-indigo-200 bg-white p-6 shadow-sm">
-              <Rocket className="h-7 w-7 text-indigo-600" />
-              <h3 className="mt-4 font-display text-lg font-bold">
-                Cisco Live — Amsterdam 2026
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Technical speaker.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <Award className="h-7 w-7 text-violet-600" />
-              <h3 className="mt-4 font-display text-lg font-bold">
-                Certifications
-              </h3>
-              <ul className="mt-2 space-y-1 text-sm text-slate-600">
-                <li>Cisco Certified Network Associate · 2015</li>
-                <li>Cisco Certified DevNet Associate · 2020</li>
-                <li>Machine Learning · eCornell · 2021</li>
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <Quote className="h-7 w-7 text-fuchsia-600" />
-              <h3 className="mt-4 font-display text-lg font-bold">
-                Published research
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">
-                <span className="font-medium text-slate-900">
-                  SQL injection and its counter measures
-                </span>{" "}
-                — Elsevier Proceedings, Paper ID 1160, 2014.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════ EDUCATION ════════════════════════ */}
-      <section id="education" className="py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl">
-            <div className="mb-8 flex items-center gap-3">
-              <span className="h-px w-12 bg-indigo-600" />
-              <span className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-                Education
-              </span>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 shadow-md">
-                  <GraduationCap className="h-6 w-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-start justify-between gap-2">
-                    <div>
-                      <h3 className="font-display text-xl font-bold text-slate-900">
-                        Vellore Institute of Technology
+          <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.6fr_1fr]">
+            {/* Skills column */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {skillGroups.map((g) => {
+                const Icon = g.icon;
+                return (
+                  <div
+                    key={g.title}
+                    className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md"
+                  >
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 text-white shadow-sm">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="font-display text-sm font-bold text-slate-900">
+                        {g.title}
                       </h3>
-                      <p className="mt-1 text-sm text-slate-600">
-                        B.Tech, Information Technology
-                      </p>
                     </div>
-                    <span className="text-sm text-slate-500">
-                      May 2011 – May 2015
-                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {g.items.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-700 transition group-hover:border-indigo-200 group-hover:bg-indigo-50 group-hover:text-indigo-800"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-800">
-                    GPA · 8.2 / 10
+                );
+              })}
+              {/* Gen-AI spans full width on sm+ */}
+              <div className="hidden" />
+            </div>
+
+            {/* Recognition + Education column */}
+            <div className="flex flex-col gap-4">
+              <div className="rounded-2xl border border-indigo-200 bg-gradient-to-br from-white to-indigo-50/60 p-5 shadow-sm">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white shadow-sm">
+                    <Rocket className="h-5 w-5" />
                   </div>
+                  <h3 className="font-display text-sm font-bold text-slate-900">
+                    Speaking
+                  </h3>
+                </div>
+                <p className="mt-3 text-sm text-slate-700">
+                  <span className="font-semibold text-slate-900">
+                    Cisco Live 2026
+                  </span>{" "}
+                  · Amsterdam · Technical Speaker.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-violet-600 text-white shadow-sm">
+                    <Trophy className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-display text-sm font-bold text-slate-900">
+                    Certifications
+                  </h3>
+                </div>
+                <ul className="mt-3 space-y-1.5 text-sm text-slate-700">
+                  <li className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-violet-500" />
+                    Cisco Certified Network Associate · 2015
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-violet-500" />
+                    Cisco Certified DevNet Associate · 2020
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-violet-500" />
+                    Machine Learning · eCornell · 2021
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-fuchsia-600 text-white shadow-sm">
+                    <BookOpen className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-display text-sm font-bold text-slate-900">
+                    Published research
+                  </h3>
+                </div>
+                <p className="mt-3 text-sm text-slate-700">
+                  <span className="font-medium text-slate-900">
+                    SQL injection and its counter measures
+                  </span>{" "}
+                  — Elsevier Proceedings, Paper ID 1160, 2014.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600 text-white shadow-sm">
+                    <GraduationCap className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-display text-sm font-bold text-slate-900">
+                    Education
+                  </h3>
+                </div>
+                <div className="mt-3 text-sm text-slate-700">
+                  <p className="font-medium text-slate-900">
+                    Vellore Institute of Technology
+                  </p>
+                  <p className="mt-0.5 text-slate-600">
+                    B.Tech, Information Technology · 2011–2015 · GPA 8.2/10
+                  </p>
                 </div>
               </div>
             </div>
@@ -797,88 +744,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════ CONTACT ════════════════════════ */}
+      {/* ════════════════════════ CONTACT — compact CTA strip ════════════════════════ */}
       <section
         id="contact"
-        className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 py-20 text-white md:py-28"
+        className="relative overflow-hidden bg-slate-50 pb-16 pt-2"
       >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-grid-slate opacity-[0.06]"
-        />
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-4xl font-bold tracking-tight md:text-5xl">
-              Let&apos;s build something.
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-white/90">
-              Reach out for engineering collaborations, founding-team
-              conversations, or just to swap notes on AI tooling and
-              distributed systems.
-            </p>
-
-            <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2">
-              <a
-                href="mailto:sumit.kanwal@gmail.com"
-                className="group flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur transition hover:bg-white/20"
-              >
-                <Mail className="h-5 w-5" />
-                <span className="text-sm">
-                  <span className="block text-xs text-white/70">Email</span>
-                  <span className="block font-medium">
-                    sumit.kanwal@gmail.com
-                  </span>
-                </span>
-              </a>
-              <a
-                href="tel:+919663389360"
-                className="group flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur transition hover:bg-white/20"
-              >
-                <Phone className="h-5 w-5" />
-                <span className="text-sm">
-                  <span className="block text-xs text-white/70">Phone</span>
-                  <span className="block font-medium">+91-9663389360</span>
-                </span>
-              </a>
-              <a
-                href="https://linkedin.com/in/sumitkanwal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur transition hover:bg-white/20"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="text-sm">
-                  <span className="block text-xs text-white/70">LinkedIn</span>
-                  <span className="block font-medium">/in/sumitkanwal</span>
-                </span>
-              </a>
-              <a
-                href="https://github.com/kloudd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur transition hover:bg-white/20"
-              >
-                <Github className="h-5 w-5" />
-                <span className="text-sm">
-                  <span className="block text-xs text-white/70">GitHub</span>
-                  <span className="block font-medium">@kloudd</span>
-                </span>
-              </a>
+        <div className="container mx-auto px-4">
+          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 p-8 text-white shadow-2xl md:p-12">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-grid-slate opacity-[0.07]"
+            />
+            <div className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1.2fr_1fr]">
+              <div>
+                <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+                  Let&apos;s build something.
+                </h2>
+                <p className="mt-3 max-w-lg text-base text-white/90">
+                  Engineering collaborations, founding-team conversations, or
+                  just to swap notes on AI tooling and distributed systems.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <a
+                  href="mailto:sumit.kanwal@gmail.com"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                >
+                  <Mail className="h-4 w-4 shrink-0" />
+                  <span className="text-sm font-medium">Email</span>
+                </a>
+                <a
+                  href="tel:+919663389360"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                >
+                  <Phone className="h-4 w-4 shrink-0" />
+                  <span className="text-sm font-medium">Call</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/sumitkanwal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                >
+                  <Linkedin className="h-4 w-4 shrink-0" />
+                  <span className="text-sm font-medium">LinkedIn</span>
+                </a>
+                <a
+                  href="https://github.com/kloudd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                >
+                  <Github className="h-4 w-4 shrink-0" />
+                  <span className="text-sm font-medium">GitHub</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════ FOOTER ════════════════════════ */}
-      <footer className="bg-slate-950 py-10 text-slate-400">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 text-sm md:flex-row">
+      <footer className="border-t border-slate-200 bg-slate-50 py-8 text-slate-500">
+        <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 text-xs md:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} Sumit Singh Kanwal. All rights
+            &copy; {new Date().getFullYear()} Sumit Singh Kanwal · All rights
             reserved.
           </p>
-          <p className="text-xs">
-            Built with Next.js + Tailwind. Deployed via GitHub Pages.
-          </p>
+          <p>Built with Next.js + Tailwind · Deployed via GitHub Pages.</p>
         </div>
       </footer>
     </main>
