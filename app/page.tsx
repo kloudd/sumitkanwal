@@ -19,13 +19,10 @@ import {
   Layers,
   Cloud,
   Cpu,
-  Building2,
   Rocket,
   Calendar,
   CheckCircle2,
   ArrowRight,
-  Quote,
-  FileText,
   Trophy,
   BookOpen,
 } from "lucide-react";
@@ -133,7 +130,7 @@ const projects = [
     description:
       "Agentic, developer-grade platform that turns natural-language prompts into fully functional web applications in minutes.",
     icon: Sparkles,
-    gradient: "from-violet-500 to-fuchsia-500",
+    gradient: "from-violet-500 via-fuchsia-500 to-pink-500",
     tags: ["Agentic AI", "Codegen"],
   },
   {
@@ -142,7 +139,7 @@ const projects = [
     description:
       "AI code governance — tracks every line of code (human or AI) across the SDLC. ROI on AI spend, automated policy enforcement, audit-ready reports.",
     icon: ShieldCheck,
-    gradient: "from-indigo-500 to-cyan-500",
+    gradient: "from-indigo-500 via-blue-500 to-cyan-500",
     tags: ["AI Governance", "DevSecOps"],
   },
   {
@@ -151,7 +148,7 @@ const projects = [
     description:
       "Interactive graph & data-visualization platform — build, explore, and reason over richly-linked datasets at scale.",
     icon: Network,
-    gradient: "from-emerald-500 to-teal-500",
+    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
     tags: ["Graphs", "Data Viz"],
   },
   {
@@ -160,7 +157,7 @@ const projects = [
     description:
       "Secure cloud vault — manage sensitive credentials, secrets, and high-trust data with modern access controls and audit trails.",
     icon: Lock,
-    gradient: "from-slate-400 to-zinc-500",
+    gradient: "from-slate-400 via-zinc-500 to-slate-600",
     tags: ["Security", "Secrets"],
   },
   {
@@ -169,7 +166,7 @@ const projects = [
     description:
       "AI calling agent handling tech-screens, loan follow-ups, property inquiries, and credit-card offers — automated conversations and scheduling.",
     icon: PhoneCall,
-    gradient: "from-orange-500 to-amber-500",
+    gradient: "from-orange-500 via-amber-500 to-yellow-500",
     tags: ["Voice AI", "Agents"],
   },
   {
@@ -178,7 +175,7 @@ const projects = [
     description:
       "Real-time, AI-generated podcast — pick the podcaster, the guest, the topic; episodes are dynamically generated on demand.",
     icon: Mic,
-    gradient: "from-rose-500 to-pink-500",
+    gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
     tags: ["Generative Audio", "LLM"],
   },
   {
@@ -187,7 +184,7 @@ const projects = [
     description:
       "LLM guardrail platform — define, enforce, and evaluate generative-AI policies with confidence scoring per evaluation.",
     icon: Gauge,
-    gradient: "from-blue-500 to-indigo-500",
+    gradient: "from-blue-500 via-indigo-500 to-violet-500",
     tags: ["Guardrails", "Policy"],
   },
 ];
@@ -242,14 +239,39 @@ const skillGroups = [
   },
 ];
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({
+  children,
+  tone = "indigo",
+}: {
+  children: React.ReactNode;
+  tone?: "indigo" | "violet";
+}) {
+  const isViolet = tone === "violet";
   return (
-    <div className="mb-3 flex items-center gap-3">
-      <span className="h-px w-10 bg-gradient-to-r from-transparent to-indigo-500" />
-      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">
+    <div className="mb-3 flex items-center justify-center gap-3">
+      <span
+        className={
+          isViolet
+            ? "h-px w-10 bg-gradient-to-r from-transparent to-violet-400"
+            : "h-px w-10 bg-gradient-to-r from-transparent to-indigo-500"
+        }
+      />
+      <span
+        className={
+          isViolet
+            ? "text-xs font-semibold uppercase tracking-[0.2em] text-violet-300"
+            : "text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600"
+        }
+      >
         {children}
       </span>
-      <span className="h-px w-10 bg-gradient-to-r from-indigo-500 to-transparent" />
+      <span
+        className={
+          isViolet
+            ? "h-px w-10 bg-gradient-to-r from-violet-400 to-transparent"
+            : "h-px w-10 bg-gradient-to-r from-indigo-500 to-transparent"
+        }
+      />
     </div>
   );
 }
@@ -257,24 +279,22 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-indigo-200 selection:text-indigo-900">
-      {/* ════════════════════════ HERO + ABOUT + STATS (one unified zone) ════════════════════════ */}
+      {/* ════════════════════ HERO + ABOUT + STATS ════════════════════ */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white via-white to-slate-50">
-        {/* Subtle grid pattern */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-grid-slate bg-[size:40px_40px] opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
         />
-        {/* Soft color orbs */}
         <div
           aria-hidden
           className="pointer-events-none absolute -top-32 -right-32 h-[28rem] w-[28rem] rounded-full bg-gradient-to-br from-indigo-400/30 via-violet-400/25 to-fuchsia-400/15 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute top-1/2 -left-32 h-80 w-80 rounded-full bg-gradient-to-tr from-cyan-300/15 to-sky-300/10 blur-3xl"
+          className="pointer-events-none absolute top-1/2 -left-32 h-80 w-80 rounded-full bg-gradient-to-tr from-cyan-300/20 to-sky-300/10 blur-3xl"
         />
 
-        <div className="container relative mx-auto px-4 pt-14 pb-10 md:pt-20 md:pb-14">
+        <div className="container relative mx-auto px-4 pt-14 pb-12 md:pt-20 md:pb-16">
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_300px] lg:gap-16">
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur">
@@ -299,7 +319,7 @@ export default function Home() {
                 <span className="font-semibold text-slate-900">teeth</span> —
                 large-scale telco & hyperscaler analytics, AI-native developer
                 tooling, and platforms that go from POC to production. Two
-                startups, three live AI side-projects, one Cisco Live talk.
+                startups, four live AI side-projects, one Cisco Live talk.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -368,16 +388,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Photo */}
+            {/* Photo with animated conic ring */}
             <div className="flex justify-center md:justify-end">
               <div className="relative">
                 <div
                   aria-hidden
-                  className="absolute -inset-3 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-500 opacity-30 blur-2xl"
+                  className="absolute -inset-4 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-500 opacity-20 blur-2xl"
                 />
                 <div
                   aria-hidden
-                  className="absolute -inset-1 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-500"
+                  className="photo-ring absolute -inset-1 rounded-full"
                 />
                 <div className="relative h-56 w-56 overflow-hidden rounded-full bg-white p-1 shadow-2xl md:h-72 md:w-72">
                   <Image
@@ -397,25 +417,31 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Stats ribbon — same hero canvas, no theme break */}
-          <div className="mt-12 rounded-2xl border border-slate-200 bg-white/70 shadow-sm backdrop-blur md:mt-16">
-            <div className="grid grid-cols-2 divide-x divide-slate-200 md:grid-cols-4">
-              {stats.map((s) => (
-                <div key={s.label} className="px-4 py-5 text-center md:py-6">
-                  <div className="font-display text-2xl font-bold text-slate-900 md:text-3xl">
+          {/* Stats — same canvas */}
+          <div
+            className="mt-14 grid grid-cols-2 gap-3 md:mt-16 md:grid-cols-4"
+            style={{ perspective: "1200px" }}
+          >
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="card-light text-center"
+              >
+                <div className="font-display text-2xl font-bold text-slate-900 md:text-3xl">
+                  <span className="bg-gradient-to-br from-slate-900 to-slate-700 bg-clip-text text-transparent">
                     {s.value}
-                  </div>
-                  <div className="mt-1 text-[11px] uppercase tracking-[0.15em] text-slate-500 md:text-xs">
-                    {s.label}
-                  </div>
+                  </span>
                 </div>
-              ))}
-            </div>
+                <div className="mt-1 text-[11px] uppercase tracking-[0.18em] text-slate-500 md:text-xs">
+                  {s.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════ EXPERIENCE ════════════════════════ */}
+      {/* ════════════════════ EXPERIENCE ════════════════════ */}
       <section id="experience" className="relative bg-slate-50 py-14 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
@@ -425,9 +451,11 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mx-auto max-w-3xl">
+          <div
+            className="mx-auto max-w-3xl"
+            style={{ perspective: "1500px" }}
+          >
             <div className="relative pl-8 md:pl-12">
-              {/* Vertical rail */}
               <div
                 aria-hidden
                 className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-indigo-300 via-slate-300 to-transparent md:left-5"
@@ -439,13 +467,12 @@ export default function Home() {
                     key={`${job.company}-${job.period}`}
                     className="relative"
                   >
-                    {/* Rail dot */}
                     <div
                       aria-hidden
                       className={`absolute -left-[1.65rem] top-6 h-3 w-3 rounded-full ring-4 ring-slate-50 md:-left-[1.9rem] ${job.accent}`}
                     />
 
-                    <article className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md md:p-6">
+                    <article className="card-light group">
                       <header className="flex flex-wrap items-start justify-between gap-3">
                         <div className="min-w-0 flex-1">
                           <h3 className="font-display text-lg font-bold text-slate-900 md:text-xl">
@@ -486,7 +513,7 @@ export default function Home() {
                         {job.tags.map((t) => (
                           <span
                             key={t}
-                            className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-700"
+                            className="chip chip-light chip-on-hover-indigo"
                           >
                             {t}
                           </span>
@@ -501,19 +528,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════ PROJECTS ════════════════════════ */}
+      {/* ════════════════════ PROJECTS ════════════════════ */}
       <section
         id="projects"
-        className="relative overflow-hidden bg-slate-950 py-14 text-white md:py-20"
+        className="relative overflow-hidden bg-slate-950 py-16 text-white md:py-24"
       >
-        {/* Soft fade-in from light bg above */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-50/10 to-transparent"
+          className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-grid-slate opacity-[0.05] [background-size:40px_40px]"
+          className="pointer-events-none absolute inset-0 bg-grid-slate opacity-[0.04] [background-size:40px_40px]"
         />
         <div
           aria-hidden
@@ -521,14 +547,8 @@ export default function Home() {
         />
 
         <div className="container relative mx-auto px-4">
-          <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
-            <div className="mb-3 flex items-center justify-center gap-3">
-              <span className="h-px w-10 bg-gradient-to-r from-transparent to-violet-400" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">
-                Projects
-              </span>
-              <span className="h-px w-10 bg-gradient-to-r from-violet-400 to-transparent" />
-            </div>
+          <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+            <SectionLabel tone="violet">Projects</SectionLabel>
             <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
               Shipped, not slideware.
             </h2>
@@ -538,59 +558,77 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            style={{ perspective: "1500px" }}
+          >
             {projects.map((p) => {
               const Icon = p.icon;
-              return (
-                <a
-                  key={p.title}
-                  href={p.url ?? "#"}
-                  target={p.url ? "_blank" : undefined}
-                  rel={p.url ? "noopener noreferrer" : undefined}
-                  className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur transition hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] ${
-                    p.url ? "" : "cursor-default"
-                  }`}
-                >
+              const inner = (
+                <>
+                  {/* Animated gradient mesh background */}
                   <div
                     aria-hidden
-                    className={`pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-gradient-to-br ${p.gradient} opacity-25 blur-3xl transition group-hover:opacity-40`}
+                    className={`mesh-bg pointer-events-none absolute inset-0 bg-gradient-to-br ${p.gradient} opacity-[0.18] transition-opacity duration-500 group-hover:opacity-30`}
                   />
+                  {/* Top edge highlight */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                  />
+
                   <div className="relative">
                     <div className="mb-4 flex items-start justify-between">
                       <div
-                        className={`inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${p.gradient} shadow-lg`}
+                        className={`icon-tile icon-tile-md bg-gradient-to-br ${p.gradient}`}
                       >
-                        <Icon className="h-5 w-5 text-white" />
+                        <Icon className="h-5 w-5 drop-shadow" />
                       </div>
                       {p.url && (
                         <ExternalLink className="h-4 w-4 text-slate-500 transition group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       )}
                     </div>
-                    <h3 className="font-display text-lg font-bold">
+                    <h3 className="font-display text-lg font-bold tracking-tight">
                       {p.title}
                     </h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-slate-300">
                       {p.description}
                     </p>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
+                    <div className="mt-4 flex flex-wrap gap-1.5">
                       {p.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-slate-300"
-                        >
+                        <span key={t} className="chip chip-dark">
                           {t}
                         </span>
                       ))}
                     </div>
                   </div>
+                </>
+              );
+
+              return p.url ? (
+                <a
+                  key={p.title}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-dark group overflow-hidden"
+                >
+                  {inner}
                 </a>
+              ) : (
+                <div
+                  key={p.title}
+                  className="card-dark group overflow-hidden"
+                >
+                  {inner}
+                </div>
               );
             })}
           </div>
 
           {/* Featured demo */}
-          <div className="mx-auto mt-10 max-w-5xl">
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 backdrop-blur">
+          <div className="mx-auto mt-12 max-w-5xl">
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 backdrop-blur shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]">
               <div className="overflow-hidden rounded-xl bg-black">
                 <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
@@ -613,9 +651,13 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent"
+        />
       </section>
 
-      {/* ════════════════════════ SNAPSHOT — Skills + Recognition + Education ════════════════════════ */}
+      {/* ════════════════════ SNAPSHOT ════════════════════ */}
       <section id="snapshot" className="bg-slate-50 py-14 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
@@ -625,18 +667,18 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.6fr_1fr]">
-            {/* Skills column */}
+          <div
+            className="mx-auto grid max-w-6xl gap-4 lg:grid-cols-[1.6fr_1fr]"
+            style={{ perspective: "1500px" }}
+          >
+            {/* Skills */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {skillGroups.map((g) => {
                 const Icon = g.icon;
                 return (
-                  <div
-                    key={g.title}
-                    className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md"
-                  >
+                  <div key={g.title} className="card-light group">
                     <div className="mb-3 flex items-center gap-2.5">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 text-white shadow-sm">
+                      <div className="icon-tile icon-tile-sm bg-gradient-to-br from-indigo-500 to-violet-500">
                         <Icon className="h-5 w-5" />
                       </div>
                       <h3 className="font-display text-sm font-bold text-slate-900">
@@ -647,7 +689,7 @@ export default function Home() {
                       {g.items.map((item) => (
                         <span
                           key={item}
-                          className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-700 transition group-hover:border-indigo-200 group-hover:bg-indigo-50 group-hover:text-indigo-800"
+                          className="chip chip-light chip-on-hover-indigo"
                         >
                           {item}
                         </span>
@@ -656,15 +698,13 @@ export default function Home() {
                   </div>
                 );
               })}
-              {/* Gen-AI spans full width on sm+ */}
-              <div className="hidden" />
             </div>
 
-            {/* Recognition + Education column */}
+            {/* Recognition + Education */}
             <div className="flex flex-col gap-4">
-              <div className="rounded-2xl border border-indigo-200 bg-gradient-to-br from-white to-indigo-50/60 p-5 shadow-sm">
+              <div className="card-light">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white shadow-sm">
+                  <div className="icon-tile icon-tile-sm bg-gradient-to-br from-indigo-500 to-indigo-700">
                     <Rocket className="h-5 w-5" />
                   </div>
                   <h3 className="font-display text-sm font-bold text-slate-900">
@@ -679,9 +719,9 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="card-light">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-violet-600 text-white shadow-sm">
+                  <div className="icon-tile icon-tile-sm bg-gradient-to-br from-violet-500 to-violet-700">
                     <Trophy className="h-5 w-5" />
                   </div>
                   <h3 className="font-display text-sm font-bold text-slate-900">
@@ -704,9 +744,9 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="card-light">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-fuchsia-600 text-white shadow-sm">
+                  <div className="icon-tile icon-tile-sm bg-gradient-to-br from-fuchsia-500 to-fuchsia-700">
                     <BookOpen className="h-5 w-5" />
                   </div>
                   <h3 className="font-display text-sm font-bold text-slate-900">
@@ -721,9 +761,9 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="card-light">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600 text-white shadow-sm">
+                  <div className="icon-tile icon-tile-sm bg-gradient-to-br from-emerald-500 to-emerald-700">
                     <GraduationCap className="h-5 w-5" />
                   </div>
                   <h3 className="font-display text-sm font-bold text-slate-900">
@@ -744,16 +784,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════ CONTACT — compact CTA strip ════════════════════════ */}
+      {/* ════════════════════ CONTACT ════════════════════ */}
       <section
         id="contact"
         className="relative overflow-hidden bg-slate-50 pb-16 pt-2"
       >
         <div className="container mx-auto px-4">
-          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 p-8 text-white shadow-2xl md:p-12">
+          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 p-8 text-white shadow-[0_30px_60px_-20px_rgba(79,70,229,0.4)] md:p-12">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0 bg-grid-slate opacity-[0.07]"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
             />
             <div className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1.2fr_1fr]">
               <div>
@@ -768,14 +812,14 @@ export default function Home() {
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 <a
                   href="mailto:sumit.kanwal@gmail.com"
-                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
                 >
                   <Mail className="h-4 w-4 shrink-0" />
                   <span className="text-sm font-medium">Email</span>
                 </a>
                 <a
                   href="tel:+919663389360"
-                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
                 >
                   <Phone className="h-4 w-4 shrink-0" />
                   <span className="text-sm font-medium">Call</span>
@@ -784,7 +828,7 @@ export default function Home() {
                   href="https://linkedin.com/in/sumitkanwal"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
                 >
                   <Linkedin className="h-4 w-4 shrink-0" />
                   <span className="text-sm font-medium">LinkedIn</span>
@@ -793,7 +837,7 @@ export default function Home() {
                   href="https://github.com/kloudd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:bg-white/20"
+                  className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
                 >
                   <Github className="h-4 w-4 shrink-0" />
                   <span className="text-sm font-medium">GitHub</span>
@@ -804,7 +848,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════ FOOTER ════════════════════════ */}
       <footer className="border-t border-slate-200 bg-slate-50 py-8 text-slate-500">
         <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 text-xs md:flex-row">
           <p>
